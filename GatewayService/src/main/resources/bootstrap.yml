@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: gatewayservice
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      enabled: false
+
+#Setting logging levels
+#logging:
+#    level:
+#      com.netflix: WARN
+#      org.springframework.web: WARN
+#      com.thoughtmechanix: DEBUG

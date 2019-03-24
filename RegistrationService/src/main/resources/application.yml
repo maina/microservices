@@ -1,0 +1,13 @@
+#Default port is 8762
+server:
+  port: 8762
+eureka:
+  instance:
+    preferIpAddress: true # register with IP cause for container based services, the hostname is random and unresolvable whereas IP will always be
+  client:
+    registerWithEureka: true
+    fetchRegistry: true # cache registry locally and then fetch every 30 secs to confirm service still up
+    serviceUrl:
+        defaultZone: http://localhost:8761/eureka/ #comma-separated list of Eureka services the client will use to resolve to service locations
+
+        

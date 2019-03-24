@@ -1,0 +1,33 @@
+server:
+  port: 5555
+
+  #Setting logging levels
+logging:
+    level:
+      com.netflix: WARN
+      org.springframework.web: WARN
+      com.crotontech: DEBUG
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+
+management.endpoints.web.exposure.include: '*'
+
+zuul.ignored-services: "*"
+zuul.prefix:  /api
+zuul.routes.registrationservice: /registration/**
+#zuul.routes.licensingservice: /licensing/**
+#zuul.routes.authenticationservice: /auth/**
+zuul.sensitiveHeaders: Cookie,Set-Cookie
+zuul.debug.request: true
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 4000 # requests timeout time with hystrix
+#hystrix.command.registrationservice.execution.isolation.thread.timeoutInMillisec onds: 3000  # specific timeout for a service
+#hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: 2 #  For configurations longer than five seconds you have to set both the Hystrix and the Ribbon timeouts
+#licensingservice.ribbon.ReadTimeout: 2
+

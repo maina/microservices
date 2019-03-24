@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: registrationservice # logical name of the service that will be registered with eureka
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      enabled: true
