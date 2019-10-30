@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 @RestController
-@RequestMapping(value="v1/companies")
+@RequestMapping(value="/v1/companies")
 public class CompanyController {
 
     private static final Logger logger = LoggerFactory.getLogger(CompanyController.class);

@@ -15,15 +15,16 @@ eureka:
         defaultZone: http://localhost:8761/eureka/
 
 server:
-  port: 8901
-  servlet:
-    context-path: /auth
+  port: 8764
+
 
 spring:
+  application:
+    name: authservice
   datasource:
     url: jdbc:mysql://localhost:3306/remedial
     username: root
-    password: r00t
+    password: R00tp@ss!
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect

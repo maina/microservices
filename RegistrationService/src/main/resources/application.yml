@@ -9,5 +9,10 @@ eureka:
     fetchRegistry: true # cache registry locally and then fetch every 30 secs to confirm service still up
     serviceUrl:
         defaultZone: http://localhost:8761/eureka/ #comma-separated list of Eureka services the client will use to resolve to service locations
-
+logging:
+    level:
+        com.crotontech: DEBUG
+spring:
+  profiles:
+    include: microservices-security
         

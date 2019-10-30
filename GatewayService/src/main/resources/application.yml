@@ -23,7 +23,7 @@ zuul.ignored-services: "*"
 zuul.prefix:  /api
 zuul.routes.registrationservice: /registration/**
 #zuul.routes.licensingservice: /licensing/**
-#zuul.routes.authenticationservice: /auth/**
+zuul.routes.authservice: /auth/**
 zuul.sensitiveHeaders: Cookie,Set-Cookie
 zuul.debug.request: true
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 4000 # requests timeout time with hystrix
