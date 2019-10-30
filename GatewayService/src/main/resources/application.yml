@@ -1,6 +1,8 @@
 server:
   port: 5555
-
+spring:
+  profiles:
+    include: microservices-security
   #Setting logging levels
 logging:
     level:

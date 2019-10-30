@@ -3,13 +3,11 @@ package com.crotontech.GatewayService.filters;
 import com.netflix.zuul.context.RequestContext;
 import org.springframework.stereotype.Component;
 
+import static com.crotontech.common.utils.UserContext.*;
+
 @Component
 public class FilterUtils {
 
-    public static final String CORRELATION_ID = "hrm-correlation-id";
-    public static final String AUTH_TOKEN     = "hrm-auth-token";
-    public static final String USER_ID        = "hrm-user-id";
-    public static final String ORG_ID         = "hrm-org-id";
     public static final String PRE_FILTER_TYPE = "pre";
     public static final String POST_FILTER_TYPE = "post";
     public static final String ROUTE_FILTER_TYPE = "route";

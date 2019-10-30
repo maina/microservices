@@ -20,7 +20,6 @@
 		<!--Docker build Config-->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<start-class>com.crotontech.GatewayService.GatewayServiceApplication</start-class>
-		<java.version>1.8</java.version>
 		<docker.image.name>jbugara/hrm-eurekaservice</docker.image.name>
 		<docker.image.tag>hrm-eurekaservice</docker.image.tag>
 
@@ -28,31 +27,18 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.crotontech.common</groupId>
+			<artifactId>microservices-sample-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
-		<!--</dependency>-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
-		</dependency>
-
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-config-client</artifactId>-->
-		<!--</dependency>-->
-
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.5.2</version>
 		</dependency>
 
 		<dependency>

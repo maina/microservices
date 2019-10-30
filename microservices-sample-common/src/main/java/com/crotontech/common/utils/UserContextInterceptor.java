@@ -1,4 +1,4 @@
-package com.crotontech.GatewayService.utils;
+package com.crotontech.common.utils;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;

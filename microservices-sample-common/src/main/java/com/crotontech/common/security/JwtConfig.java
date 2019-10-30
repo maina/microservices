@@ -23,7 +23,7 @@ public class JwtConfig {
 	@Value("${security.jwt.uri:/login}")
     private String loginUri;
 
-	@Value("${security.jwt.uri:/refreshtoken}")
+	@Value("${security.jwt.uri:**/refreshtoken}")
     private String refreshTokenUri;
 
     @Value("${security.jwt.header:Authorization}")
