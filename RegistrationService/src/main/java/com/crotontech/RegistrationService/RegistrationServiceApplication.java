@@ -15,12 +15,6 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication(scanBasePackages = "com.crotontech")
 public class RegistrationServiceApplication {
 
-	@LoadBalanced //uses ribbon to client balance
-	@Bean
-	public RestTemplate getRestTemplate(){
-		return new RestTemplate();
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(RegistrationServiceApplication.class, args);
 	}

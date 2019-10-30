@@ -22,7 +22,7 @@ management.endpoints.web.exposure.include: '*'
 zuul.ignored-services: "*"
 zuul.prefix:  /api
 zuul.routes.registrationservice: /registration/**
-#zuul.routes.licensingservice: /licensing/**
+zuul.routes.payrollservice: /payroll/**
 zuul.routes.authservice: /auth/**
 zuul.sensitiveHeaders: Cookie,Set-Cookie
 zuul.debug.request: true
@@ -30,4 +30,3 @@ hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 4000 #
 #hystrix.command.registrationservice.execution.isolation.thread.timeoutInMillisec onds: 3000  # specific timeout for a service
 #hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: 2 #  For configurations longer than five seconds you have to set both the Hystrix and the Ribbon timeouts
 #licensingservice.ribbon.ReadTimeout: 2
-

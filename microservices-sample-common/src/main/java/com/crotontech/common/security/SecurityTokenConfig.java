@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 @Configuration
 @Order(1)
 @Profile("microservices-security")
-@EnableWebSecurity(debug = true)   // Enable security config. This annotation denotes config for spring security.
+@EnableWebSecurity   // Enable security config. This annotation denotes config for spring security.
 public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtConfig jwtConfig;
