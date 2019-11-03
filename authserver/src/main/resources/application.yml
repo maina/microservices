@@ -3,14 +3,14 @@ logging:
   level:
     com.netflix: WARN
     org.springframework.web: WARN
-    com.thoughtmechanix: DEBUG
+    com.crotontech: DEBUG
 
 eureka:
   instance:
-    preferIpAddress: true
+    preferIpAddress: false
   client:
-    registerWithEureka: true
-    fetchRegistry: true
+    registerWithEureka: false
+    fetchRegistry: false
     serviceUrl:
         defaultZone: http://localhost:8761/eureka/
 
@@ -21,6 +21,8 @@ server:
 spring:
   application:
     name: authservice
+  profiles:
+    include: microservices-security
   datasource:
     url: jdbc:mysql://localhost:3306/remedial
     username: root
@@ -32,7 +34,13 @@ spring:
     hibernate:
       ddl-auto: update
 
-signing:
-  key: abcd
+microservices-security:
+    jwt:
+        login-url: /login
+        refresh-token-url: /refreshtoken
+        header: Authorization
+        prefix: Bearer
+        expiration: 86400
+        secret: 1d655ec8-b0cb-47b0-b4bf-1b3a2fe649a6
 
 

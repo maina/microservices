@@ -53,7 +53,7 @@ public class TrackingFilter extends ZuulFilter{
         }
 
         RequestContext ctx = RequestContext.getCurrentContext();
-        logger.debug("Processing incoming request for {}.",  ctx.getRequest().getRequestURI());
+        logger.debug("Processing incoming request for {}. With auth token {}",  ctx.getRequest().getRequestURI(),filterUtils.getAuthToken());
         return null;
     }
 }

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 import lombok.Getter;
 import lombok.ToString;
+import org.springframework.stereotype.Component;
 
 // To use this class outside. You have to 
 	// 1. Define it as a bean, either by adding @Component or use @Bean to instantiate an object from it
@@ -20,22 +21,22 @@ public class JwtConfig {
 
 	// Spring doesn't inject/autowire to "static" fields. 
 	// Link: https://stackoverflow.com/a/6897406
-	@Value("${security.jwt.uri:/login}")
+	@Value("${microservices-security.jwt.uri:/login}")
     private String loginUri;
 
-	@Value("${security.jwt.uri:**/refreshtoken}")
+	@Value("${microservices-security.jwt.uri:**/refreshtoken}")
     private String refreshTokenUri;
 
-    @Value("${security.jwt.header:Authorization}")
+    @Value("${microservices-security.jwt.header:Authorization}")
     private String header;
 
-    @Value("${security.jwt.prefix:Bearer }")
+    @Value("${microservices-security.jwt.prefix:Bearer }")
     private String prefix;
 
-    @Value("${security.jwt.expiration:#{24*60*60}}")
+    @Value("${microservices-security.jwt.expiration:#{24*60*60}}")
     private int expiration;
 
-    @Value("${security.jwt.secret:JwtSecretKey}")
+    @Value("${microservices-security.jwt.secret:JwtSecretKey}")
     private String secret;
     
 

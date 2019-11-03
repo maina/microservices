@@ -1,6 +1,6 @@
 package com.crotontech.authserver.hystrix;
 
-import com.crotontech.authserver.utils.UserContextHolder;
+import com.crotontech.common.utils.UserContextHolder;
 import com.netflix.hystrix.HystrixThreadPoolKey;
 import com.netflix.hystrix.strategy.concurrency.HystrixConcurrencyStrategy;
 import com.netflix.hystrix.strategy.concurrency.HystrixRequestVariable;

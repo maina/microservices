@@ -1,7 +1,7 @@
 package com.crotontech.authserver.hystrix;
 
-import com.crotontech.authserver.utils.UserContext;
-import com.crotontech.authserver.utils.UserContextHolder;
+import com.crotontech.common.utils.UserContext;
+import com.crotontech.common.utils.UserContextHolder;
 
 import java.util.concurrent.Callable;
 

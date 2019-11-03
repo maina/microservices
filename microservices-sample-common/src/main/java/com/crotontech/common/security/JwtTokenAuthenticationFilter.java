@@ -1,6 +1,7 @@
 package com.crotontech.common.security;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -9,9 +10,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.crotontech.common.models.MicroserviceUser;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -63,12 +67,13 @@ public class JwtTokenAuthenticationFilter extends  OncePerRequestFilter {
 			if(username != null) {
 				@SuppressWarnings("unchecked")
 				List<String> authorities = (List<String>) claims.get("authorities");
+				List<GrantedAuthority> grantedAuths = AuthorityUtils.createAuthorityList(authorities.get(0));
 
 				// 5. Create auth object
 				// UsernamePasswordAuthenticationToken: A built-in object, used by spring to represent the current authenticated / being authenticated user.
 				// It needs a list of authorities, which has type of GrantedAuthority interface, where SimpleGrantedAuthority is an implementation of that interface
-				 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
-								 username, null, authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
+				MicroserviceUser microserviceUser= new MicroserviceUser(username,null,true,false,false,false,grantedAuths,"email","name",1l);
+				UsernamePasswordAuthenticationToken auth=new UsernamePasswordAuthenticationToken(microserviceUser, null, grantedAuths);
 
 				 // 6. Authenticate the user
 				 // Now, user is authenticated
