@@ -34,13 +34,6 @@ spring:
     hibernate:
       ddl-auto: update
 
-microservices-security:
-    jwt:
-        login-url: /login
-        refresh-token-url: /refreshtoken
-        header: Authorization
-        prefix: Bearer
-        expiration: 86400
-        secret: 1d655ec8-b0cb-47b0-b4bf-1b3a2fe649a6
+
 
 
